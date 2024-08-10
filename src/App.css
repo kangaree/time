@@ -1,42 +1,79 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(52, 1fr); /* 52 weeks */
+  grid-auto-rows: repeat(31, 1fr); /* 30 years and some change */
+  width: 100vw;
+  height: 100vh;
+  gap: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gallery-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.fullscreen-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.card {
-  padding: 2em;
+.fullscreen-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-.read-the-docs {
-  color: #888;
+.close-button, .nav-button {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+.selected-date {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.close-button {
+  top: 20px;
+  right: 20px;
+}
+
+.nav-button {
+  bottom: 20px;
+}
+
+.nav-button:nth-of-type(2) {
+  left: 20px;
+}
+
+.nav-button:nth-of-type(3) {
+  right: 20px;
+}
+
+.close-button:hover, .nav-button:hover {
+  background: #fff;
+  color: #000;
 }
