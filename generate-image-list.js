@@ -18,7 +18,7 @@ fs.readdir(directoryPath, (err, files) => {
   );
 
   // Generate file paths
-  const imagePaths = imageFiles.map((file) => `/times/${file}`);
+  const imagePaths = imageFiles.map((file) => `/time/times/${file}`);
 
   // Write JSON to file
   fs.writeFile(outputPath, JSON.stringify(imagePaths, null, 2), (err) => {

@@ -8,7 +8,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch("/times-list.json");
+        const response = await fetch("/time/times-list.json");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
